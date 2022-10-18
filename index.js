@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const connectDB = require('./DataBase/connect');
+const connectDB = require('./dataBase/connect');
 const asyncWrapper = require('./middleware/async');
 
 const quotesRoutes = require('./routes/quotes');
