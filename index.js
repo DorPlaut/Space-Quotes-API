@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
+const cors = require('cors');
 const connectDB = require('./dataBase/connect');
 const asyncWrapper = require('./middleware/async');
 
@@ -10,6 +11,11 @@ const quotesRoutes = require('./routes/quotes');
 const port = process.env.PORT;
 
 // middlewares
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 app.use('/api/V1', quotesRoutes);
 app.use(express.json());
 app.use(express.static('./public'));
