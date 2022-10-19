@@ -30,8 +30,16 @@ code {
 h1 {
   font-size: 2.8rem;
 }
+h3 {
+  margin-bottom: -0.5rem;
+}
 a {
   color: rgb(241, 241, 241);
   text-decoration: none;
   font-size: 2rem;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: rgb(119, 119, 119);
 }
