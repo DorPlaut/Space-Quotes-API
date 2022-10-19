@@ -8,7 +8,8 @@ const {
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-router.route('/quotes').get(getAllQuotes).post(jsonParser, createQuote);
+router.route('/quotes').get(getAllQuotes);
+// .post(jsonParser, createQuote); uncomment to use post
 router.route('/quotes/random').get(getRandomQuote);
 
 module.exports = router;

@@ -28,7 +28,11 @@ const getRandomQuote = asyncWrapper(async (req, res) => {
   const allQuotes = await Quote.find({});
   const randomNum = Math.floor(Math.random() * allQuotes.length);
   const randomQuote = allQuotes[randomNum];
-  res.status(201).json(randomQuote);
+  res.status(201).json({
+    quote: randomQuote.quote,
+    author: randomQuote.author,
+    id: randomQuote._id,
+  });
 });
 
 // post a quote
